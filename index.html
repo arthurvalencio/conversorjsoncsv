@@ -60,6 +60,7 @@
             <div class="buttons">
                 <button onclick="converterHandler()">Converter</button>
                 <button onclick="downloadHandler()">Download</button>
+                <button onclick="clearHandler()">Limpar</button>
             </div>
             <textarea name="csv" id="csv"></textarea>
         </div>
@@ -113,6 +114,11 @@
         const rows = jsonData.map(row => fields.map(field => row[field]).join(','));
         const csvContent = [fields.join(','), ...rows].join('\n');
         return csvContent;
+    }
+
+    function clearHandler() {
+        csvInput.value = "";
+        jsonInput.value = "";
     }
 </script>
 </html>
